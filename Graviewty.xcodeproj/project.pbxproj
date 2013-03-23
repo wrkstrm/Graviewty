@@ -19,6 +19,12 @@
 		6E7E274816FE1F5700173C51 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7E274616FE1F5700173C51 /* MainStoryboard_iPhone.storyboard */; };
 		6E7E274B16FE1F5700173C51 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7E274916FE1F5700173C51 /* MainStoryboard_iPad.storyboard */; };
 		6E7E274E16FE1F5700173C51 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7E274D16FE1F5700173C51 /* ViewController.m */; };
+		6E7E275916FE1FA900173C51 /* WSColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7E275716FE1FA900173C51 /* WSColorPalette.m */; };
+		6E7E275D16FE208E00173C51 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E275C16FE208E00173C51 /* CoreMotion.framework */; };
+		6E7E276416FE20EF00173C51 /* WSVectorLogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7E275F16FE20EF00173C51 /* WSVectorLogoView.m */; };
+		6E7E276516FE20EF00173C51 /* WSGravityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7E276116FE20EF00173C51 /* WSGravityButton.m */; };
+		6E7E276616FE20EF00173C51 /* WSMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7E276316FE20EF00173C51 /* WSMotionManager.m */; };
+		6E7E276916FE211100173C51 /* MAKVONotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7E276816FE211100173C51 /* MAKVONotificationCenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +45,17 @@
 		6E7E274A16FE1F5700173C51 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		6E7E274C16FE1F5700173C51 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6E7E274D16FE1F5700173C51 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6E7E275616FE1FA900173C51 /* WSColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSColorPalette.h; sourceTree = "<group>"; };
+		6E7E275716FE1FA900173C51 /* WSColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSColorPalette.m; sourceTree = "<group>"; };
+		6E7E275C16FE208E00173C51 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		6E7E275E16FE20EF00173C51 /* WSVectorLogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSVectorLogoView.h; sourceTree = "<group>"; };
+		6E7E275F16FE20EF00173C51 /* WSVectorLogoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSVectorLogoView.m; sourceTree = "<group>"; };
+		6E7E276016FE20EF00173C51 /* WSGravityButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGravityButton.h; sourceTree = "<group>"; };
+		6E7E276116FE20EF00173C51 /* WSGravityButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSGravityButton.m; sourceTree = "<group>"; };
+		6E7E276216FE20EF00173C51 /* WSMotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMotionManager.h; sourceTree = "<group>"; };
+		6E7E276316FE20EF00173C51 /* WSMotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMotionManager.m; sourceTree = "<group>"; };
+		6E7E276716FE211100173C51 /* MAKVONotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAKVONotificationCenter.h; sourceTree = "<group>"; };
+		6E7E276816FE211100173C51 /* MAKVONotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKVONotificationCenter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E7E275D16FE208E00173C51 /* CoreMotion.framework in Frameworks */,
 				6E7E272F16FE1F5700173C51 /* UIKit.framework in Frameworks */,
 				6E7E273116FE1F5700173C51 /* Foundation.framework in Frameworks */,
 				6E7E273316FE1F5700173C51 /* CoreGraphics.framework in Frameworks */,
@@ -75,6 +93,7 @@
 		6E7E272D16FE1F5700173C51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E7E275C16FE208E00173C51 /* CoreMotion.framework */,
 				6E7E272E16FE1F5700173C51 /* UIKit.framework */,
 				6E7E273016FE1F5700173C51 /* Foundation.framework */,
 				6E7E273216FE1F5700173C51 /* CoreGraphics.framework */,
@@ -91,6 +110,16 @@
 				6E7E274916FE1F5700173C51 /* MainStoryboard_iPad.storyboard */,
 				6E7E274C16FE1F5700173C51 /* ViewController.h */,
 				6E7E274D16FE1F5700173C51 /* ViewController.m */,
+				6E7E275E16FE20EF00173C51 /* WSVectorLogoView.h */,
+				6E7E275F16FE20EF00173C51 /* WSVectorLogoView.m */,
+				6E7E276016FE20EF00173C51 /* WSGravityButton.h */,
+				6E7E276116FE20EF00173C51 /* WSGravityButton.m */,
+				6E7E276216FE20EF00173C51 /* WSMotionManager.h */,
+				6E7E276316FE20EF00173C51 /* WSMotionManager.m */,
+				6E7E275616FE1FA900173C51 /* WSColorPalette.h */,
+				6E7E275716FE1FA900173C51 /* WSColorPalette.m */,
+				6E7E276716FE211100173C51 /* MAKVONotificationCenter.h */,
+				6E7E276816FE211100173C51 /* MAKVONotificationCenter.m */,
 				6E7E273516FE1F5700173C51 /* Supporting Files */,
 			);
 			path = Graviewty;
@@ -180,6 +209,11 @@
 				6E7E273B16FE1F5700173C51 /* main.m in Sources */,
 				6E7E273F16FE1F5700173C51 /* AppDelegate.m in Sources */,
 				6E7E274E16FE1F5700173C51 /* ViewController.m in Sources */,
+				6E7E275916FE1FA900173C51 /* WSColorPalette.m in Sources */,
+				6E7E276416FE20EF00173C51 /* WSVectorLogoView.m in Sources */,
+				6E7E276516FE20EF00173C51 /* WSGravityButton.m in Sources */,
+				6E7E276616FE20EF00173C51 /* WSMotionManager.m in Sources */,
+				6E7E276916FE211100173C51 /* MAKVONotificationCenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +308,10 @@
 		6E7E275216FE1F5700173C51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Graviewty/Graviewty-Prefix.pch";
 				INFOPLIST_FILE = "Graviewty/Graviewty-Info.plist";
@@ -285,6 +323,10 @@
 		6E7E275316FE1F5700173C51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Graviewty/Graviewty-Prefix.pch";
 				INFOPLIST_FILE = "Graviewty/Graviewty-Info.plist";
