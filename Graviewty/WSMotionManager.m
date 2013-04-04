@@ -24,9 +24,7 @@
 + (NSOperationQueue *) sharedQueue {
     static NSOperationQueue *sharedQueue;
 	static dispatch_once_t onceToken;
-	dispatch_once(&onceToken, ^{
-        sharedQueue = [NSOperationQueue new];
-    });
+	dispatch_once(&onceToken, ^{ sharedQueue = [NSOperationQueue new]; });
 	return sharedQueue;
 }
 
@@ -34,10 +32,10 @@
     self = [super init];
     if (self) {
         self.deviceMotionUpdateInterval = 1.0f / 4.0f;
-        [self startDeviceMotionUpdatesUsingReferenceFrame: CMAttitudeReferenceFrameXArbitraryZVertical toQueue: [WSMotionManager sharedQueue] withHandler: ^(CMDeviceMotion *motion, NSError *error) {
-            if(motion)
-                self.currentMotion = motion;
-        }];
+        [self startDeviceMotionUpdatesUsingReferenceFrame: CMAttitudeReferenceFrameXArbitraryZVertical toQueue: [WSMotionManager sharedQueue]  withHandler: ^(CMDeviceMotion *motion, NSError *error) {
+             if(motion)
+                 self.currentMotion = motion;
+         }];
     }
     return self;
 }
