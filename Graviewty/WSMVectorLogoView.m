@@ -42,7 +42,7 @@
     return self;
 }
 
-- (void) commonInitializer {
+- (void)commonInitializer {
     self.currentIdentityTransform = CGAffineTransformIdentity;
     self.shadowOffset = 4.0f;
     
@@ -215,7 +215,7 @@
     [super commonInitializer];
 }
 
-- (void) scaleByFactor:(CGFloat)scaleFactor {
+- (void)scaleByFactor:(CGFloat)scaleFactor {
     [UIView animateWithDuration: 1.0f animations:^{
         self.transform = CGAffineTransformScale(self.currentIdentityTransform, scaleFactor, scaleFactor);
     }];

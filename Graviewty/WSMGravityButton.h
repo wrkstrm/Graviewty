@@ -14,9 +14,9 @@
 @property (nonatomic) CMAcceleration gravityMultiplier;
 @property (nonatomic) CGFloat shadowOffset;
 
-@property (nonatomic, readwrite) CGSize lightShadowOffset;
+@property (nonatomic) CGSize lightShadowOffset;
 @property (nonatomic) BOOL animating;
 
-- (void) commonInitializer;
+- (void)commonInitializer;
 
 @end
