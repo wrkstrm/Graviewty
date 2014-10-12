@@ -16,27 +16,32 @@
 
 + (WSMotionManager *) sharedManager {
     static WSMotionManager *sharedManager;
-	static dispatch_once_t onceToken;
-	dispatch_once(&onceToken, ^{ sharedManager = [WSMotionManager new]; });
-	return sharedManager;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{ sharedManager = [WSMotionManager new]; });
+    return sharedManager;
 }
 
 + (NSOperationQueue *) sharedQueue {
     static NSOperationQueue *sharedQueue;
-	static dispatch_once_t onceToken;
-	dispatch_once(&onceToken, ^{ sharedQueue = [NSOperationQueue new]; });
-	return sharedQueue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{ sharedQueue = [NSOperationQueue new]; });
+    return sharedQueue;
 }
 
 - (id) init {
-    self = [super init];
-    if (self) {
-        self.deviceMotionUpdateInterval = 1.0f / 4.0f;
-        [self startDeviceMotionUpdatesUsingReferenceFrame: CMAttitudeReferenceFrameXArbitraryZVertical toQueue: [WSMotionManager sharedQueue]  withHandler: ^(CMDeviceMotion *motion, NSError *error) {
-             if(motion)
-                 self.currentMotion = motion;
-         }];
-    }
+    if (!(self = [super init])) return nil;
+    
+    self.deviceMotionUpdateInterval = 1.0f / 4.0f;
+    [self startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXArbitraryZVertical
+                                              toQueue:[WSMotionManager sharedQueue]
+                                          withHandler:^(CMDeviceMotion *motion, NSError *error)
+     {
+         if(motion) {
+             self.currentMotion = motion;
+         }
+         
+     }];
+    
     return self;
 }
 

@@ -17,7 +17,7 @@
 
 - (void) startMonitoringMotion {
     __weak WSGravityButton *weakSelf = self;
-    [self observeTarget: [WSMotionManager sharedManager] keyPath: @"currentMotion" options: NSKeyValueObservingOptionNew block:^(MAKVONotification *notification) {
+    [self observeTarget: [WSMotionManager sharedManager] keyPath:@"currentMotion" options:NSKeyValueObservingOptionNew block:^(MAKVONotification *notification) {
         CMAcceleration newGravity = [WSMotionManager sharedManager].currentMotion.gravity;
         CGFloat xGravDelta = fabs(weakSelf.shadowOffset * (weakSelf.gravityMultiplier.x - newGravity.x));
         CGFloat yGravDelta = fabs(weakSelf.shadowOffset * (weakSelf.gravityMultiplier.y - newGravity.y));
