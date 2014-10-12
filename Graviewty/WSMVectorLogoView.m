@@ -43,7 +43,6 @@
 }
 
 - (void) commonInitializer {
-    NSLog(@"What?!?");
     self.currentIdentityTransform = CGAffineTransformIdentity;
     self.shadowOffset = 4.0f;
     
