@@ -7,11 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "WSVectorLogoView.h"
+#import "WSMVectorLogoView.h"
 
 @interface ViewController ()
 
-@property (nonatomic, strong) WSVectorLogoView *smallVectorLogo;
+@property (nonatomic, strong) WSMVectorLogoView *smallVectorLogo;
 
 @end
 
@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.smallVectorLogo = [[WSVectorLogoView alloc] initWithFrame: CGRectMake(0, 0, 280, 170)];
+    self.smallVectorLogo = [[WSMVectorLogoView alloc] initWithFrame: CGRectMake(0, 0, 280, 170)];
     self.smallVectorLogo.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
     self.smallVectorLogo.enabled = YES;
     [self.view addSubview: self.smallVectorLogo];

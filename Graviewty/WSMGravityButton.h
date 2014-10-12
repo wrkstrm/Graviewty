@@ -6,14 +6,15 @@
 //  Copyright (c) 2013 wrkstrm. All rights reserved.
 //
 
-#import "WSMotionManager.h"
+#import "WSMMotionManager.h"
 
-@interface WSGravityButton : UIButton
+@interface WSMGravityButton : UIButton
 
+//Instance variables necessary to create the offset.
 @property (nonatomic) CMAcceleration gravityMultiplier;
 @property (nonatomic) CGFloat shadowOffset;
-//The above two create the offset.
-@property (nonatomic) CGSize lightShadowOffset;
+
+@property (nonatomic, readwrite) CGSize lightShadowOffset;
 @property (nonatomic) BOOL animating;
 
 - (void) commonInitializer;

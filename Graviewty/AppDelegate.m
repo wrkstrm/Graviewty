@@ -10,6 +10,28 @@
 
 @implementation AppDelegate
 
++ (void)load {
+    WSMLogger *logger = WSMLogger.sharedInstance;
+    [DDLog addLogger:logger];
+    
+    // Customize the WSLogger
+    logger.formatStyle = kWSMLogFormatStyleQueue;
+    logger[kWSMLogFormatKeyFile] = @7;
+    logger[kWSMLogFormatKeyFunction] = @40;
+    
+    // Color the WSlogger. By default DDLog does not color VERBOSE or warn flags.
+    [logger setColorsEnabled:YES];
+    [logger setForegroundColor:SKColor.orangeColor
+               backgroundColor:SKColor.blackColor
+                       forFlag:LOG_FLAG_WARN];
+    
+    [logger setForegroundColor:SKColor.yellowColor
+               backgroundColor:SKColor.blackColor
+                       forFlag:LOG_FLAG_VERBOSE];
+    
+    DDLogWarn(@"Welcome to %@", AppDelegate.ver);
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
@@ -42,5 +64,15 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
++ (NSString *)ver {
+    NSDictionary *info = NSBundle.mainBundle.infoDictionary;
+    return [NSString stringWithFormat:@"%@ (Version: %@ Build: %@)",
+            info[@"CFBundleName"],
+            info[@"CFBundleShortVersionString"],
+            info[@"CFBundleVersion"]];
+}
+
 
 @end

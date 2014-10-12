@@ -9,7 +9,17 @@
 #endif
 
 #ifdef __OBJC__
-#import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
-#import "MAKVONotificationCenter.h"
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <SpriteKit/SpriteKit.h>
+    #import <ReactiveCocoa/ReactiveCocoa.h>
+    #import <WSMLogger/WSMLogger.h>
 #endif
+
+/**
+ Awesomeness. Lazy instantiation as a function.
+ Available in Ruby as ||= operator.
+ I have *not* checked the compiled code to check for efficiency.
+ */
+
+#define WSM_LAZY(variable, assignment) (variable = variable ?: assignment)

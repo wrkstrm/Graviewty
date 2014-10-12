@@ -6,18 +6,23 @@
 //  Copyright (c) 2013 wrkstrm. All rights reserved.
 //
 
-#import "WSMotionManager.h"
-@interface WSMotionManager ()
+#import "WSMMotionManager.h"
+@interface WSMMotionManager ()
 
 @property (nonatomic , strong) NSMutableDictionary *timerDictionary;
+
+@property (nonatomic, strong, readwrite) RACSubject *motionSubject;
+
++ (NSOperationQueue *) sharedQueue;
+
 @end
 
-@implementation WSMotionManager
+@implementation WSMMotionManager
 
-+ (WSMotionManager *) sharedManager {
-    static WSMotionManager *sharedManager;
++ (WSMMotionManager *) sharedManager {
+    static WSMMotionManager *sharedManager;
     static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{ sharedManager = [WSMotionManager new]; });
+    dispatch_once(&onceToken, ^{ sharedManager = [WSMMotionManager new]; });
     return sharedManager;
 }
 
@@ -30,19 +35,19 @@
 
 - (id) init {
     if (!(self = [super init])) return nil;
-    
     self.deviceMotionUpdateInterval = 1.0f / 4.0f;
     [self startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXArbitraryZVertical
-                                              toQueue:[WSMotionManager sharedQueue]
+                                              toQueue:[WSMMotionManager sharedQueue]
                                           withHandler:^(CMDeviceMotion *motion, NSError *error)
      {
-         if(motion) {
-             self.currentMotion = motion;
-         }
-         
+         [self.motionSubject sendNext:motion];
      }];
     
     return self;
+}
+
+- (RACSubject *)motionSubject {
+    return WSM_LAZY(_motionSubject, [RACSubject subject]);
 }
 
 @end

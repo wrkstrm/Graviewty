@@ -7,12 +7,14 @@
 //
 
 #import <CoreMotion/CoreMotion.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
-@interface WSMotionManager : CMMotionManager
+@interface WSMMotionManager : CMMotionManager
 
-+ (WSMotionManager *) sharedManager;
-+ (NSOperationQueue *) sharedQueue;
++ (WSMMotionManager *) sharedManager;
 
 @property (nonatomic, strong) CMDeviceMotion *currentMotion;
+
+@property (nonatomic, strong, readonly) RACSubject *motionSubject;
 
 @end
